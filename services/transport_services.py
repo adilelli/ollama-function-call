@@ -1,14 +1,14 @@
 def suggest_transport():
-    print('suggest_transport')
+    return('suggest_transport')
 
 def complaint_transport():
-    print('complaint_transport')
+    return('complaint_transport')
 
 def appointment_transport():
-    print('appointment_transport')
+    return('appointment_transport')
 
 def support_transport():
-    print('support_transport')
+    return('support_transport')
 
 def collab_transport():
-    print('collab_transport')
+    return('collab_transport')

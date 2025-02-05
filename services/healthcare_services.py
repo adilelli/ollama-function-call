@@ -1,14 +1,14 @@
 def suggest_healthcare():
-    print('sugest')
+    return('sugest')
 
 def complaint_healthcare():
-    print('complaint')
+    return('complaint')
 
 def appointment_healthcare():
-    print('appointment')
+    return('appointment')
 
 def support_healthcare():
-    print('support')
+    return('support')
 
 def collab_healthcare():
-    print('collab')
+    return('collab')

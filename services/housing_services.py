@@ -1,14 +1,14 @@
 def suggest_housing():
-    print('suggest_housing')
+    return('suggest_housing')
 
 def complaint_housing():
-    print('complaint_housing')
+    return('complaint_housing')
 
 def appointment_housing():
-    print('appointment_housing')
+    return('appointment_housing')
 
 def support_housing():
-    print('support_housing')
+    return('support_housing')
 
 def collab_housing():
-    print('collab_housing')
+    return('collab_housing')
