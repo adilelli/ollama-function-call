@@ -95,8 +95,6 @@ tools = [
 ]
 
 # API Endpoint to interact with Mistral
-
-# API Endpoint to interact with Mistral
 @app.post("/output")
 async def structured_output_mistral(request: ChatRequest):  # Accept JSON body
     response = client.chat.parse(
