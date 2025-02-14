@@ -4,9 +4,6 @@ import os
 import json
 from mistralai import Mistral
 
-# Set API Key
-os.environ["MISTRAL_API_KEY"] = "cIRC6j2aIOKKTSqqsVxsKx5A0314Wtwt"
-
 # Initialize FastAPI & Mistral Client
 app = FastAPI()
 client = Mistral(api_key=os.getenv("MISTRAL_API_KEY"))
