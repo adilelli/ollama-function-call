@@ -69,3 +69,24 @@ def functionCall(request: str, model: str):
     #         print('Function not found:', tool.function.name)
 
 
+from langchain_ollama import OllamaLLM
+from pydantic import BaseModel
+
+class Country(BaseModel):
+    name: str
+    capital: str
+    languages: list[str]
+
+def get_country_info(country_name: str) -> Country:
+    llm = OllamaLLM(model="llama3.1")  # Load Ollama model
+
+    response = llm.invoke(
+        f"Tell me about {country_name}.",
+    )
+
+    return Country.model_validate_json(response)
+
+# Example usage
+country_info = get_country_info("Canada")
+print(country_info)
+

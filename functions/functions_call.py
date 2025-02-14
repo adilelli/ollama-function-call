@@ -7,6 +7,12 @@ from services.transport_services import suggest_transport, support_transport, co
 from services.infra_services import suggest_infra, support_infra, complaint_infra, collab_infra, appointment_infra
 from services.food_services import suggest_food, support_food, complaint_food, collab_food, appointment_food
 
+from pydantic import BaseModel
+
+class ResponseModel(BaseModel):
+    location: str
+    date: str
+    name: str
 
 def functionCall(request: str, model: str):
     try:
@@ -22,8 +28,27 @@ def functionCall(request: str, model: str):
                 suggest_infra, support_infra, complaint_infra, collab_infra, appointment_infra,
                 suggest_food, support_food, complaint_food, collab_food, appointment_food
             ],
+            # format=ResponseModel.model_json_schema(),
         )
         return response.message
     except Exception as e:
         print(f"Error in functionCall: {e}")  # Log the error
         return None  # Return None or handle the error appropriately
+
+def get_country_info(country_name: str) -> ResponseModel:
+    response = ollama.chat(
+        messages=[
+            {
+                'role': 'user',
+                'content': f'Tell me about {country_name}.',
+            }
+        ],
+        model='llama3.1',
+        format=ResponseModel.model_json_schema(),
+    )
+
+    return ResponseModel.model_validate_json(response.message.content)
+
+# Example usage
+country_info = get_country_info("Canada")
+print(country_info)
