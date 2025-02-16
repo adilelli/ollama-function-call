@@ -7,27 +7,27 @@ from models import request_dto, healthcare
 router = APIRouter()
 healthcare_collection = config_healthcare()
 
-@router.post("/suggest_healthcare")
+@router.post("/suggest")
 async def suggest_healthcare_req(request: request_dto):
     res_text = await suggest_healthcare()
     return {"original_text": request.text, "processed_text": res_text}
 
-@router.post("/support_healthcare")
+@router.post("/support")
 async def support_healthcare_req(request: request_dto):
     res_text = await support_healthcare()
     return {"original_text": request.text, "processed_text": res_text}
 
-@router.post("/complaint_healthcare")
+@router.post("/complaint")
 async def complaint_healthcare_req(request: request_dto):
     res_text = await complaint_healthcare()
     return {"original_text": request.text, "processed_text": res_text}
 
-@router.post("/collab_healthcare")
+@router.post("/collab")
 async def collab_healthcare_req(request: request_dto):
     res_text = await collab_healthcare()
     return {"original_text": request.text, "processed_text": res_text}
 
-@router.post("/appointment_healthcare")
+@router.post("/appointment")
 async def appointment_healthcare_req(request: request_dto):
     res_text = await appointment_healthcare()
     return {"original_text": request.text, "processed_text": res_text}

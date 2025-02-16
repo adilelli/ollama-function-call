@@ -22,9 +22,9 @@ app.add_middleware(
 )
 
 # Include routers
-app.include_router(attraction_router, prefix="")
-app.include_router(education_router, prefix="")
-app.include_router(food_router, prefix="")
+app.include_router(attraction_router, prefix="/attraction")
+app.include_router(education_router, prefix="/education")
+app.include_router(food_router, prefix="/food")
 app.include_router(healthcare_router, prefix="/healthcare")
 app.include_router(housing_router, prefix="/housing")
 app.include_router(infra_router, prefix="/infra")

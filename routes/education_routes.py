@@ -7,27 +7,27 @@ from models import request_dto, education
 router = APIRouter()
 education_collection = config_education()
 
-@router.post("/suggest_education")
+@router.post("/suggest")
 async def suggest_education_req(request: request_dto):
     res_text = await suggest_education()
     return {"original_text": request.text, "processed_text": res_text}
 
-@router.post("/support_education")
+@router.post("/support")
 async def support_education_req(request: request_dto):
     res_text = await support_education()
     return {"original_text": request.text, "processed_text": res_text}
 
-@router.post("/complaint_education")
+@router.post("/complaint")
 async def complaint_education_req(request: request_dto):
     res_text = await complaint_education()
     return {"original_text": request.text, "processed_text": res_text}
 
-@router.post("/collab_education")
+@router.post("/collab")
 async def collab_education_req(request: request_dto):
     res_text = await collab_education()
     return {"original_text": request.text, "processed_text": res_text}
 
-@router.post("/appointment_education")
+@router.post("/appointment")
 async def appointment_education_req(request: request_dto):
     res_text = await appointment_education()
     return {"original_text": request.text, "processed_text": res_text}

@@ -7,27 +7,27 @@ from models import request_dto, transport
 router = APIRouter()
 transport_collection = config_transport()
 
-@router.post("/suggest_transport")
+@router.post("/suggest")
 async def suggest_transport_req(request: request_dto):
     res_text = await suggest_transport()
     return {"original_text": request.text, "processed_text": res_text}
 
-@router.post("/support_transport")
+@router.post("/support")
 async def support_transport_req(request: request_dto):
     res_text = await support_transport()
     return {"original_text": request.text, "processed_text": res_text}
 
-@router.post("/complaint_transport")
+@router.post("/complaint")
 async def complaint_transport_req(request: request_dto):
     res_text = await complaint_transport()
     return {"original_text": request.text, "processed_text": res_text}
 
-@router.post("/collab_transport")
+@router.post("/collab")
 async def collab_transport_req(request: request_dto):
     res_text = await collab_transport()
     return {"original_text": request.text, "processed_text": res_text}
 
-@router.post("/appointment_transport")
+@router.post("/appointment")
 async def appointment_transport_req(request: request_dto):
     res_text = await appointment_transport()
     return {"original_text": request.text, "processed_text": res_text}
