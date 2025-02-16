@@ -13,8 +13,7 @@ class ChatRequest(BaseModel):
     prompt: str
 
 class Weather(BaseModel):
-    city: str
-    temperature: str
+    city: list[str]
 
 # Mock function to return weather data
 # def get_weather(city: str):
@@ -34,7 +33,7 @@ tools = [
                 "type": "object",
                 "properties": {
                     "location": {
-                        "type": "array",
+                        "type": "list",
                         "description": "The location",
                     }
                 },
