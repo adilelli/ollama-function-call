@@ -34,7 +34,7 @@ tools = [
                 "type": "object",
                 "properties": {
                     "location": {
-                        "type": "string",
+                        "type": "array",
                         "description": "The location",
                     }
                 },
@@ -114,4 +114,4 @@ async def chat_with_mistral(request: ChatRequest):  # Accept JSON body
         temperature=0
     )
 
-    return {"response function": responseFunc, "response structure": responseObj}  # Default text response
+    return {"response_function": responseFunc, "response_structure": responseObj}  # Default text response
